@@ -24,7 +24,7 @@ Then you have to create a custom `TokenObtainPairView` class and change the `ser
 
 - Make a custom `TokenObtainPairView` and change the `serializer_class`:
 ```python
-from auth_protection.utils import ProtectTokenObtainPairSerializer
+from auth_protection.serializers import ProtectTokenObtainPairSerializer
 
 
 class CustomTokenObtainPairView(TokenObtainPairView):
@@ -34,7 +34,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 
 - Change All `authentication_classes` on your views and replace it with `JWTAuthProtection`:
 ```python
-from auth_protection.utils import JWTAuthProtection
+from auth_protection.authentications import JWTAuthProtection
 
 
 class SampleView(TARGET_VIEW):
