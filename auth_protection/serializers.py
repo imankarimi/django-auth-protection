@@ -1,6 +1,6 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
-from utils import get_protect_key
+from auth_protection.utils import get_protect_key
 
 
 class ProtectTokenObtainPairSerializer(TokenObtainPairSerializer):
