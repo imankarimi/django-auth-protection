@@ -41,7 +41,7 @@ class SampleView(TARGET_VIEW):
     authentication_classes = [JWTAuthProtection]
 ```
 
-- Change your `TokenRefreshView` view to `ProtectTokenRefreshView` (EX: urls.py):
+- Change your `TokenRefreshView` view to `ProtectTokenRefreshView` (EX: `urls.py`):
 ```python
 from auth_protection.views import ProtectTokenRefreshView
 

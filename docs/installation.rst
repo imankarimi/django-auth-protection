@@ -33,4 +33,16 @@ Then you have to create a custom ``TokenObtainPairView`` class and change the ``
     class SampleView(TARGET_VIEW):
         authentication_classes = [JWTAuthProtection]
 
+* Change your ``TokenRefreshView`` view to ``ProtectTokenRefreshView`` (EX: ``urls.py``):
+
+.. code-block:: python
+
+    from auth_protection.views import ProtectTokenRefreshView
+
+    urlpatterns = [
+        # ...
+        path('YOUR_PATH/refresh/', ProtectTokenRefreshView.as_view(), name='URL_NAME'),
+        # ...
+    ]
+
 .. _Django Auth Protection: https://pypi.org/project/django-auth-protection/
