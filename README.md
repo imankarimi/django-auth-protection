@@ -40,3 +40,14 @@ from auth_protection.authentications import JWTAuthProtection
 class SampleView(TARGET_VIEW):
     authentication_classes = [JWTAuthProtection]
 ```
+
+- Change your `TokenRefreshView` view to `ProtectTokenRefreshView` (EX: urls.py):
+```python
+from auth_protection.views import ProtectTokenRefreshView
+
+urlpatterns = [
+    # ...
+    path('YOUR_PATH/refresh/', ProtectTokenRefreshView.as_view(), name='URL_NAME'),
+    # ...
+]
+```
